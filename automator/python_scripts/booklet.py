@@ -18,19 +18,24 @@ def make_booklet(pdf_path):
   output_pdf_path = base_path + '_booklet' + ext
   output_pdf = PDFDocument.alloc().init()
 
-  pdf = get_pdf_pages(pdf_path)
-  page_count = len(pdf)
+  pdf_pages = get_pdf_pages(pdf_path)
+  pdf_page_count = len(pdf_pages)
 
-  if page_count % 4 != 0:
-      raise Exception('Number of pages must be divadable by 4')
+  # Booklets can only be created when the number of pages is divisible by 4
+  # Add blank pages if any are missing
+  missing_page_count = 0 if pdf_page_count % 4 == 0 else 4 - pdf_page_count % 4
+  missing_pages = [PDFPage.new() for _i in range(0, missing_page_count)]
 
-  groups = [(page_count - i*2 - 1, i*2, i*2 + 1, page_count - i*2 - 2) for i in range(0, page_count/4, 2)]
+  booklet_pages = pdf_pages + missing_pages
+  page_count = len(booklet_pages)
+
+  groups = [(page_count - i*2 - 1, i*2, i*2 + 1, page_count - i*2 - 2) for i in range(0, page_count/4)]
   order = flatten(groups)
 
   print order
 
   for i, page_numer in enumerate(order):
-    output_pdf.insertPage_atIndex_(pdf[page_numer], i)
+    output_pdf.insertPage_atIndex_(booklet_pages[page_numer], i)
 
   output_pdf.writeToFile_(output_pdf_path)
   return output_pdf_path
