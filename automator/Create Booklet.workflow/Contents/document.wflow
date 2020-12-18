@@ -699,7 +699,12 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>function run(input, parameters) {	var width = 126;	var height = 40;	return ' '.repeat(width) + '\n'.repeat(height);}</string>
+					<string>function run(input, parameters) {
+	var width = 126;
+	var height = 40;
+
+	return ' '.repeat(width) + '\n'.repeat(height);
+}</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunJavaScript</string>
@@ -1272,7 +1277,37 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>const dir = (path) =&gt; path.substr(0, path.lastIndexOf('/'))// Sorts pages for a bookletfunction run(input, parameters) {  const page_paths = input.map((file) =&gt; file.toString())  const blank_page_path = dir(page_paths[0]) + '/blank.png'  // Booklets can only be created when the number of pages  // is divisible by 4  const missing_pages_count = page_paths.length % 4;  const missing_pages = Array.from(    { length: missing_pages_count },    _ =&gt; blank_page_path  )  const all_pages = page_paths.concat(missing_pages)  const all_page_count = all_pages.length  const booklet_page_count = all_page_count / 4  const booklet_pages = Array.from(    { length: booklet_page_count - 1 },    (_, booklet_page_index) =&gt; [      all_pages[all_page_count - booklet_page_index * 2 - 1],      all_pages[booklet_page_index * 2],      all_pages[booklet_page_index * 2 + 1],      all_pages[all_page_count - booklet_page_index * 2 - 2]    ]  ).flat()  return booklet_pages}</string>
+					<string>const dir = (path) =&gt; path.substr(0, path.lastIndexOf('/'))
+
+// Sorts pages for a booklet
+function run(input, parameters) {
+  const page_paths = input.map((file) =&gt; file.toString())
+  const blank_page_path = dir(page_paths[0]) + '/blank.png'
+
+  // Booklets can only be created when the number of pages
+  // is divisible by 4
+  const missing_pages_count = (page_paths.length % 4 == 0 ? 0 : 4 - page_paths.length % 4)
+  const missing_pages = Array.from(
+    { length: missing_pages_count },
+    _ =&gt; blank_page_path
+  )
+
+  const all_pages = page_paths.concat(missing_pages)
+  const all_page_count = all_pages.length
+  const booklet_page_count = all_page_count / 4
+
+  const booklet_pages = Array.from(
+    { length: booklet_page_count - 1 },
+    (_, booklet_page_index) =&gt; [
+      all_pages[all_page_count - booklet_page_index * 2 - 1],
+      all_pages[booklet_page_index * 2],
+      all_pages[booklet_page_index * 2 + 1],
+      all_pages[all_page_count - booklet_page_index * 2 - 2]
+    ]
+  ).flat()
+
+  return booklet_pages
+}</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunJavaScript</string>
@@ -2975,7 +3010,7 @@
 			<key>name</key>
 			<string>PagesDirectory</string>
 			<key>value</key>
-			<string>/Users/pb/Downloads/umowa/booklet-pages</string>
+			<string>~/Desktop/booklet-pages</string>
 		</dict>
 		<dict>
 			<key>UUID</key>
