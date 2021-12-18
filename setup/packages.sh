@@ -2,6 +2,6 @@
 
 source ./config.env
 
-# Install homebrew packages, apps
+# Install Homebrew packages, apps
 cd -v $SCRIPT_ROOTDIR/homebrew
 brew bundle

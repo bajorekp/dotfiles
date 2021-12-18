@@ -2,12 +2,15 @@
 
 source ./config.env
 
-# Install homebrew and Command Line Tools if missing
+# Install Homebrew and Command Line Tools if missing
 if ! command -v brew &> /dev/null; then
-  # requests sudo password faster - before processing
+  # Requests sudo password faster - before processing
   sudo echo
   # echo - this press Enter to continue without prompt
   echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  # Adds Homebrew to PATH
+  echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> ~/.zprofile
+  eval $(/opt/homebrew/bin/brew shellenv)
 fi
 echo "Path to Homebrew: $(which brew)"
 
