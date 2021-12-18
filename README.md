@@ -3,6 +3,7 @@
 My development machine setup.
 
 Dotfiles are the way you can personalize your system. If you want to try out my configuration, you should review the code first and customize it for yourself. Remember that you use it at your own risk, and these scripts can irreversibly damage your user environment, so do not use these settings blindly.
+Also, check out [awesome-dotfiles](https://github.com/webpro/awesome-dotfiles) repo. They have a great list of alternative configurations.
 
 # Quick setup
 
