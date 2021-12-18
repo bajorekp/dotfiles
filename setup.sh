@@ -10,4 +10,5 @@ source ./config.env
 mkdir -vp $DEVELOPER_DIR
 
 # Runs setup scripts
-
+bash ./setup/homebrew.sh
+bash ./setup/packages.sh
