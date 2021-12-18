@@ -8,7 +8,10 @@ Also, check out [awesome-dotfiles](https://github.com/webpro/awesome-dotfiles) r
 # Quick setup
 
 ```bash
-curl -L https://github.com/bajorekp/dotfiles/archive/main.tar.gz | tar x && cd dotfiles-main && bash setup.sh
+cd ~/Downloads && \
+  curl -L https://github.com/bajorekp/dotfiles/archive/main.tar.gz | tar x && \
+  cd dotfiles-main && \
+  bash setup.sh
 ```
 
 Prepared and updated for the latest stable macOS on Apple Silicon.
