@@ -1,14 +1,17 @@
 #!/bin/bash
 
-# Initialize config.env with missing values
+# Initializes config.env with missing values
 bash autoconfig.sh
 
-# Load configuration
+# Loads configuration
 source ./config.env
 
 # Creates required directories
 mkdir -vp $DEVELOPER_DIR
 
-# Runs setup scripts
+# Installs apps
 bash ./setup/homebrew.sh
 bash ./setup/packages.sh
+
+# Sets system
+bash ./setup/mac_dock.sh
