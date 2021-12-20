@@ -18,3 +18,8 @@ bash ./setup/mac_dock.sh
 
 # Sets Github (needs user action)
 bash ./setup/git.sh
+bash ./setup/repo_setup.sh
+
+# Setup terminal
+bash ./setup/fonts.sh
+bash ./setup/terminal.sh
