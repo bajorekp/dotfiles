@@ -23,3 +23,4 @@ bash ./setup/repo_setup.sh
 # Setup terminal
 bash ./setup/fonts.sh
 bash ./setup/terminal.sh
+bash ./setup/shell.sh

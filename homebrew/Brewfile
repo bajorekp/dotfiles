@@ -23,6 +23,8 @@ brew "terraform"
 brew "tmux"
 brew "tree"
 brew "wget"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
 
 cask "chromedriver"
 cask "docker"
