@@ -1,0 +1,136 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "background": "#18354c",
+    "foreground": "#cfa938"
+  },
+  "blocks": [
+    {
+      "alignment": "left",
+      "horizontal_offset": 0,
+      "vertical_offset": 0,
+      "segments": [
+        {
+          "type": "root",
+          "style": "diamond",
+          "leading_diamond": "",
+          "trailing_diamond": "\ue0b4 ",
+          "foreground": "p:background",
+          "background": "p:foreground"
+        },
+        {
+          "type": "exit",
+          "style": "diamond",
+          "foreground": "#ffffff",
+          "background": "#00897b",
+          "background_templates": ["{{ if ne .Code 0 }}#e91e63{{ end }}"],
+          "leading_diamond": "\uE0B6",
+          "trailing_diamond": "\uE0B4 ",
+          "properties": {
+            "template": "{{ if eq .Code 0 }}✓{{ else }}{{.Code}}{{ end }}"
+          }
+        },
+        {
+          "background": "p:background",
+          "foreground": "p:foreground",
+          "leading_diamond": "\uE0B6",
+          "trailing_diamond": "\uE0B0",
+          "properties": {
+            "prefix": "   ",
+            "home_icon": "~",
+            "folder_separator_icon": " \uE0b1 ",
+            "style": "agnoster_full"
+          },
+          "style": "diamond",
+          "type": "path"
+        },
+        {
+          "type": "python",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "p:foreground",
+          "background": "p:background",
+          "properties": {
+            "prefix": " \uE235 "
+          }
+        },
+        {
+          "type": "ruby",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "p:foreground",
+          "background": "p:background",
+          "properties": {
+            "prefix": " \uE235 "
+          }
+        },
+        {
+          "type": "node",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "p:foreground",
+          "background": "p:background",
+          "properties": {
+            "prefix": " \uE235 "
+          }
+        },
+        {
+          "type": "go",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "p:foreground",
+          "background": "p:background",
+          "properties": {
+            "prefix": " \uE235 "
+          }
+        },
+        {
+          "type": "aws",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "p:foreground",
+          "background": "p:background",
+          "properties": {
+            "prefix": " \uE235 "
+          }
+        },
+        {
+          "type": "executiontime",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "p:background",
+          "background": "p:foreground",
+          "leading_diamond": "",
+          "trailing_diamond": "",
+          "properties": {
+            "always_enabled": false,
+            "threshold": 500,
+            "style": "amarillo"
+          }
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "foreground": "p:background",
+          "background": "#579e61",
+          "powerline_symbol": "\uE0B0",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#cfa938{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}",
+            "{{ if gt .Ahead 0 }}#579e9e{{ end }}",
+            "{{ if gt .Behind 0 }}#9da8a8{{ end }}"
+          ],
+          "properties": {
+            "fetch_status": true,
+            "fetch_stash_count": true,
+            "fetch_upstream_icon": false,
+            "branch_max_length": 25,
+            "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uF692 {{ .StashCount }}{{ end }}"
+          }
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true
+}
