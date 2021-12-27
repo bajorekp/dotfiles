@@ -25,3 +25,6 @@ bash ./setup/repo_setup.sh
 bash ./setup/fonts.sh
 bash ./setup/terminal.sh
 bash ./setup/shell.sh
+
+# Setup Virtual Studio Code
+bash ./setup/vs_code.sh

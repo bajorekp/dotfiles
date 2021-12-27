@@ -1,0 +1,10 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "terminal.integrated.fontFamily": "SFMono Nerd Font, Menlo",
+    "window.zoomLevel": 1,
+    "editor.accessibilitySupport": "off",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+}
