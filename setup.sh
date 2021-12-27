@@ -14,6 +14,7 @@ bash ./setup/homebrew.sh
 bash ./setup/packages.sh
 
 # Sets system
+bash ./setup/mac_general.sh
 bash ./setup/mac_dock.sh
 
 # Sets Github (needs user action)
