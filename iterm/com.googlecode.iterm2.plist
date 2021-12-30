@@ -6,6 +6,8 @@
 	<true/>
 	<key>CloseBookmarksWindowAfterOpening</key>
 	<false/>
+	<key>CopySelection</key>
+	<false/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Chalk</key>
@@ -3090,7 +3092,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/pb</string>
+			<string>~</string>
 		</dict>
 	</array>
 	<key>OpenBookmark</key>
