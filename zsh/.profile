@@ -49,3 +49,5 @@ alias gb="git branch"
 gu() { gco $1 && gl && gco - && gr $1 }
 # removes all branches
 git_autopurge() { git branch -D $(git branch --format='%(refname:short)') }
+# copy the PWD path to the clipboard, then print clipboard for confirmation
+alias pbpwd="echo -n $PWD | pbcopy && echo $PWD"
