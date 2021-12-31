@@ -19,6 +19,8 @@ bash ./setup/mac_dock.sh
 
 # Sets Github (needs user action)
 bash ./setup/git.sh
+
+# Clones the repo into Developer directory
 bash ./setup/repo_setup.sh
 
 # Setup terminal
@@ -28,3 +30,6 @@ bash ./setup/shell.sh
 
 # Setup Virtual Studio Code
 bash ./setup/vs_code.sh
+
+# Setup VIM
+bash ./setup/vim.sh
