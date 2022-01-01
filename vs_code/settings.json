@@ -6,5 +6,6 @@
     "window.zoomLevel": 1,
     "editor.accessibilitySupport": "off",
     "editor.insertSpaces": true,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "diffEditor.ignoreTrimWhitespace": false
 }
