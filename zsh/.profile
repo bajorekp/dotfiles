@@ -44,8 +44,10 @@ alias gco="git checkout"
 alias glog="git log --oneline"
 alias gl="git pull"
 alias gp="git push"
-alias gr="git rebase"
+alias gr="git rebase -i --autosquash"
 alias gb="git branch"
+alias gc="git commit"
+alias gd="git diff HEAD"
 # pull branch $1 and rebase from it
 gu() { gco $1 && gl && gco - && gr $1 }
 # removes all branches
