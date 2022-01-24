@@ -28,6 +28,8 @@ export VISUAL="code --wait"
 # -l in list
 # -A shows hiden files withou . and ..
 alias l="ls --color -lA"
+# lists directories
+lsd() { ls --color -lAd ${1:-.} ${1:-.}/*/; }
 
 # Creates a dir and cd's into it
 mkcd() { mkdir -p "$@" && cd "$@"; }
