@@ -33,3 +33,6 @@ bash ./setup/vs_code.sh
 
 # Setup VIM
 bash ./setup/vim.sh
+
+# Installs ruby
+bash ./setup/ruby.sh

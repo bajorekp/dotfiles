@@ -14,7 +14,6 @@
 # export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-
 # Setup editor envs
 export EDITOR="vim"
 export VISUAL="code --wait"
@@ -53,3 +52,5 @@ gu() { gco $1 && gl && gco - && gr $1 }
 git_autopurge() { git branch -D $(git branch --format='%(refname:short)') }
 # copy the PWD path to the clipboard, then print clipboard for confirmation
 alias pbpwd="echo -n $PWD | pbcopy && echo $PWD"
+# reloads shell configuration
+alias reload="source ~/.zshrc"
