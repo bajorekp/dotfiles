@@ -88,3 +88,12 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 # Sort Activity Monitor results by CPU usage
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
+
+###############################################################################
+# Keyboard                                                                    #
+###############################################################################
+
+# Sets initial repeat after 150 ms of holding a key (standard is 15 - 225 ms)
+defaults write -g InitialKeyRepeat -int 15
+# Repeat hold key every 15ms (standard is 2 - 30ms)
+defaults write -g KeyRepeat -int 1
