@@ -7,7 +7,7 @@ bash autoconfig.sh
 source ./config.env
 
 # Creates required directories
-mkdir -vp $DEVELOPER_DIR
+mkdir -vp $DEVELOPER_PATH
 
 # Installs apps (needs user action)
 bash ./setup/homebrew.sh
