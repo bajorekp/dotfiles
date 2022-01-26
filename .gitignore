@@ -1,2 +1,5 @@
 # Configuration file
 config.env
+
+# Git user configuration
+git/user.gitconfig

@@ -1,9 +1,8 @@
 [credential "https://github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
-[user]
-	name = bajorekp
-	email = bajorekp@gmail.com
+[include]
+	path = ~/Developer/dotfiles/git/user.gitconfig
 [core]
 	pager = less -+FX
 	excludesFile = ~/Developer/dotfiles/git/.gitignore
