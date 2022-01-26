@@ -9,8 +9,11 @@ source ./config.env
 # Creates required directories
 mkdir -vp $DEVELOPER_PATH
 
-# Installs apps (needs user action)
+# Install Brew package manager
 bash ./setup/homebrew.sh
+eval $(/opt/homebrew/bin/brew shellenv)
+
+# Installs apps (needs user action)
 bash ./setup/packages.sh
 
 # Sets system
