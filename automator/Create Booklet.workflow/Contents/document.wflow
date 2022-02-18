@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>492</string>
+	<string>512</string>
 	<key>AMApplicationVersion</key>
 	<string>2.10</string>
 	<key>AMDocumentVersion</key>
@@ -115,7 +115,7 @@
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>299.750000:164.000000</string>
+				<string>280.500000:164.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -286,7 +286,7 @@
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>299.750000:205.000000</string>
+				<string>280.500000:205.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -398,7 +398,7 @@
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>299.750000:246.000000</string>
+				<string>280.500000:246.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -535,7 +535,7 @@
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>299.750000:287.000000</string>
+				<string>280.500000:287.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/New Folder.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -649,7 +649,7 @@
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>299.750000:328.000000</string>
+				<string>280.500000:328.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -699,12 +699,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>function run(input, parameters) {
-	var width = 126;
-	var height = 40;
-
-	return ' '.repeat(width) + '\n'.repeat(height);
-}</string>
+					<string>function run(input, parameters) {	var width = 126;	var height = 40;	return ' '.repeat(width) + '\n'.repeat(height);}</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunJavaScript</string>
@@ -761,7 +756,7 @@
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>299.750000:369.000000</string>
+				<string>280.500000:369.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run JavaScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1007,7 +1002,7 @@
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>299.750000:410.000000</string>
+				<string>280.500000:410.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Create Banner Image from Text.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1121,7 +1116,7 @@
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>299.750000:451.000000</string>
+				<string>280.500000:451.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1225,14 +1220,14 @@
 				<key>arguments</key>
 				<dict/>
 				<key>isViewVisible</key>
-				<false/>
+				<integer>0</integer>
 				<key>location</key>
-				<string>299.750000:492.000000</string>
+				<string>280.500000:492.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Split PDF.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
-			<false/>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -1277,37 +1272,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>const dir = (path) =&gt; path.substr(0, path.lastIndexOf('/'))
-
-// Sorts pages for a booklet
-function run(input, parameters) {
-  const page_paths = input.map((file) =&gt; file.toString())
-  const blank_page_path = dir(page_paths[0]) + '/blank.png'
-
-  // Booklets can only be created when the number of pages
-  // is divisible by 4
-  const missing_pages_count = (page_paths.length % 4 == 0 ? 0 : 4 - page_paths.length % 4)
-  const missing_pages = Array.from(
-    { length: missing_pages_count },
-    _ =&gt; blank_page_path
-  )
-
-  const all_pages = page_paths.concat(missing_pages)
-  const all_page_count = all_pages.length
-  const booklet_page_count = all_page_count / 4
-
-  const booklet_pages = Array.from(
-    { length: booklet_page_count - 1 },
-    (_, booklet_page_index) =&gt; [
-      all_pages[all_page_count - booklet_page_index * 2 - 1],
-      all_pages[booklet_page_index * 2],
-      all_pages[booklet_page_index * 2 + 1],
-      all_pages[all_page_count - booklet_page_index * 2 - 2]
-    ]
-  ).flat()
-
-  return booklet_pages
-}</string>
+					<string>const dir = (path) =&gt; path.substr(0, path.lastIndexOf('/'))// Sorts pages for a bookletfunction run(input, parameters) {  const page_paths = input.map((file) =&gt; file.toString())  const blank_page_path = dir(page_paths[0]) + '/blank.png'  // Booklets can only be created when the number of pages  // is divisible by 4  const missing_pages_count = (page_paths.length % 4 == 0 ? 0 : 4 - page_paths.length % 4)  const missing_pages = Array.from(    { length: missing_pages_count },    _ =&gt; blank_page_path  )  const all_pages = page_paths.concat(missing_pages)  const all_page_count = all_pages.length  const booklet_page_count = all_page_count / 4  const booklet_pages = Array.from(    { length: booklet_page_count - 1 },    (_, booklet_page_index) =&gt; [      all_pages[all_page_count - booklet_page_index * 2 - 1],      all_pages[booklet_page_index * 2],      all_pages[booklet_page_index * 2 + 1],      all_pages[all_page_count - booklet_page_index * 2 - 2]    ]  ).flat()  return booklet_pages}</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunJavaScript</string>
@@ -1360,14 +1325,14 @@ function run(input, parameters) {
 					</dict>
 				</dict>
 				<key>isViewVisible</key>
-				<false/>
+				<integer>1</integer>
 				<key>location</key>
-				<string>299.750000:533.000000</string>
+				<string>280.500000:737.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run JavaScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
-			<false/>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -1470,14 +1435,14 @@ function run(input, parameters) {
 				<key>arguments</key>
 				<dict/>
 				<key>isViewVisible</key>
-				<false/>
+				<integer>1</integer>
 				<key>location</key>
-				<string>299.750000:574.000000</string>
+				<string>280.500000:872.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/New PDF from Images.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
-			<false/>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -1512,7 +1477,10 @@ function run(input, parameters) {
 					<key>dateToUse</key>
 					<dict/>
 					<key>defaultName</key>
-					<dict/>
+					<dict>
+						<key>tokenizedValue</key>
+						<array/>
+					</dict>
 					<key>ignoreCase</key>
 					<dict/>
 					<key>includeExtensions</key>
@@ -1524,7 +1492,10 @@ function run(input, parameters) {
 					<key>nameDateSeparator</key>
 					<dict/>
 					<key>nameSingleItem</key>
-					<dict/>
+					<dict>
+						<key>tokenizedValue</key>
+						<array/>
+					</dict>
 					<key>numberLocation</key>
 					<dict/>
 					<key>numberSeparator</key>
@@ -1534,15 +1505,24 @@ function run(input, parameters) {
 					<key>renameType</key>
 					<dict/>
 					<key>replaceWithText</key>
-					<dict/>
+					<dict>
+						<key>tokenizedValue</key>
+						<array/>
+					</dict>
 					<key>singleItemOption</key>
 					<dict/>
 					<key>startingNumber</key>
 					<dict/>
 					<key>textInput</key>
-					<dict/>
+					<dict>
+						<key>tokenizedValue</key>
+						<array/>
+					</dict>
 					<key>textToFind</key>
-					<dict/>
+					<dict>
+						<key>tokenizedValue</key>
+						<array/>
+					</dict>
 					<key>useLeadingZeros</key>
 					<dict/>
 				</dict>
@@ -1943,7 +1923,7 @@ function run(input, parameters) {
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>299.750000:615.000000</string>
+				<string>280.500000:913.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Rename Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1983,7 +1963,10 @@ function run(input, parameters) {
 					<key>dateToUse</key>
 					<dict/>
 					<key>defaultName</key>
-					<dict/>
+					<dict>
+						<key>tokenizedValue</key>
+						<array/>
+					</dict>
 					<key>ignoreCase</key>
 					<dict/>
 					<key>includeExtensions</key>
@@ -1995,7 +1978,10 @@ function run(input, parameters) {
 					<key>nameDateSeparator</key>
 					<dict/>
 					<key>nameSingleItem</key>
-					<dict/>
+					<dict>
+						<key>tokenizedValue</key>
+						<array/>
+					</dict>
 					<key>numberLocation</key>
 					<dict/>
 					<key>numberSeparator</key>
@@ -2005,15 +1991,24 @@ function run(input, parameters) {
 					<key>renameType</key>
 					<dict/>
 					<key>replaceWithText</key>
-					<dict/>
+					<dict>
+						<key>tokenizedValue</key>
+						<array/>
+					</dict>
 					<key>singleItemOption</key>
 					<dict/>
 					<key>startingNumber</key>
 					<dict/>
 					<key>textInput</key>
-					<dict/>
+					<dict>
+						<key>tokenizedValue</key>
+						<array/>
+					</dict>
 					<key>textToFind</key>
-					<dict/>
+					<dict>
+						<key>tokenizedValue</key>
+						<array/>
+					</dict>
 					<key>useLeadingZeros</key>
 					<dict/>
 				</dict>
@@ -2412,7 +2407,7 @@ function run(input, parameters) {
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>299.750000:656.000000</string>
+				<string>280.500000:954.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Rename Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -2524,7 +2519,7 @@ function run(input, parameters) {
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>299.750000:697.000000</string>
+				<string>280.500000:995.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -2697,7 +2692,7 @@ function run(input, parameters) {
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>299.750000:738.000000</string>
+				<string>280.500000:1036.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -2874,122 +2869,122 @@ function run(input, parameters) {
 					</dict>
 				</dict>
 				<key>isViewVisible</key>
-				<false/>
+				<integer>0</integer>
 				<key>location</key>
-				<string>299.750000:779.000000</string>
+				<string>280.500000:1077.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Ask for Confirmation.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
-			<false/>
+			<integer>0</integer>
 		</dict>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>160B383E-4106-4527-9D9F-5163221E22DB</key>
+		<key>034A879E-AD0B-4859-B878-F1EC6174567E</key>
 		<dict>
 			<key>from</key>
 			<string>B8D6F0B6-D7B8-4B3F-8368-4794ECC489D7 - B8D6F0B6-D7B8-4B3F-8368-4794ECC489D7</string>
 			<key>to</key>
 			<string>7906C506-3FB7-4D42-9EC0-2B9A792FEA21 - 7906C506-3FB7-4D42-9EC0-2B9A792FEA21</string>
 		</dict>
-		<key>255AD47E-4391-4DF5-8B29-32D6D06CD8E3</key>
+		<key>15F48F4F-DA64-4F72-A621-14495A7946D4</key>
 		<dict>
 			<key>from</key>
-			<string>43D93978-E93B-4BF1-AD82-8FCB5D0F75EF - 43D93978-E93B-4BF1-AD82-8FCB5D0F75EF</string>
-			<key>to</key>
-			<string>DBC7FDED-0D0D-432B-A590-41B2FB8D3F51 - DBC7FDED-0D0D-432B-A590-41B2FB8D3F51</string>
-		</dict>
-		<key>29995F30-60D7-460E-9521-6154C4314ADD</key>
-		<dict>
-			<key>from</key>
-			<string>1663B310-FC0B-4FE2-BA1B-11B792E2A177 - 1663B310-FC0B-4FE2-BA1B-11B792E2A177</string>
-			<key>to</key>
-			<string>70834F5F-A4FB-4E54-A820-CDA55EBD4205 - 70834F5F-A4FB-4E54-A820-CDA55EBD4205</string>
-		</dict>
-		<key>2E55AEB3-4D19-4102-AC9F-86E6A53A88D1</key>
-		<dict>
-			<key>from</key>
-			<string>5CD0C17A-ABAA-4121-85BD-AD78D943D752 - 5CD0C17A-ABAA-4121-85BD-AD78D943D752</string>
-			<key>to</key>
-			<string>B9A2E4CC-B360-4845-A1BD-682DC271AD72 - B9A2E4CC-B360-4845-A1BD-682DC271AD72</string>
-		</dict>
-		<key>5A10E854-4FB0-4582-A682-245464AEAE61</key>
-		<dict>
-			<key>from</key>
-			<string>70834F5F-A4FB-4E54-A820-CDA55EBD4205 - 70834F5F-A4FB-4E54-A820-CDA55EBD4205</string>
-			<key>to</key>
-			<string>D6A06DFC-E233-407A-BA28-43260149978E - D6A06DFC-E233-407A-BA28-43260149978E</string>
-		</dict>
-		<key>5B93FFE0-C037-4C07-BB6A-49F5CEB9F8FA</key>
-		<dict>
-			<key>from</key>
-			<string>C34D99A3-65D8-40C4-A8E1-A3E1EC0B9846 - C34D99A3-65D8-40C4-A8E1-A3E1EC0B9846</string>
-			<key>to</key>
-			<string>A29FB908-F5A0-4740-BA38-776725CDFEBD - A29FB908-F5A0-4740-BA38-776725CDFEBD</string>
-		</dict>
-		<key>64AED663-D619-4B42-A945-F23F793E6FF4</key>
-		<dict>
-			<key>from</key>
-			<string>D6EA0DD0-DAF5-45EF-B23F-89CC513C5C4F - D6EA0DD0-DAF5-45EF-B23F-89CC513C5C4F</string>
-			<key>to</key>
 			<string>08D493F1-EE0E-4DB1-A0CF-B0D83C651877 - 08D493F1-EE0E-4DB1-A0CF-B0D83C651877</string>
-		</dict>
-		<key>830710B1-03F1-4F25-A79B-C98CE6A27234</key>
-		<dict>
-			<key>from</key>
-			<string>A29FB908-F5A0-4740-BA38-776725CDFEBD - A29FB908-F5A0-4740-BA38-776725CDFEBD</string>
 			<key>to</key>
-			<string>44A88A68-6C74-45FE-BC74-02DED5E69850 - 44A88A68-6C74-45FE-BC74-02DED5E69850</string>
+			<string>1663B310-FC0B-4FE2-BA1B-11B792E2A177 - 1663B310-FC0B-4FE2-BA1B-11B792E2A177</string>
 		</dict>
-		<key>A72C619D-A82B-4FAF-ADAC-58E36DE27144</key>
+		<key>1D8953FD-C943-4B6D-9450-268EC5E28C37</key>
 		<dict>
 			<key>from</key>
 			<string>44A88A68-6C74-45FE-BC74-02DED5E69850 - 44A88A68-6C74-45FE-BC74-02DED5E69850</string>
 			<key>to</key>
 			<string>D6EA0DD0-DAF5-45EF-B23F-89CC513C5C4F - D6EA0DD0-DAF5-45EF-B23F-89CC513C5C4F</string>
 		</dict>
-		<key>AB78F1E8-E71E-43CB-B33E-FDC9330954DB</key>
-		<dict>
-			<key>from</key>
-			<string>C6D320D7-EB07-4330-A648-7B10128A7268 - C6D320D7-EB07-4330-A648-7B10128A7268</string>
-			<key>to</key>
-			<string>43D93978-E93B-4BF1-AD82-8FCB5D0F75EF - 43D93978-E93B-4BF1-AD82-8FCB5D0F75EF</string>
-		</dict>
-		<key>AF237B84-E260-4C8A-ABC1-4CADF893CE7E</key>
+		<key>49F3A14B-7426-4C75-A329-D4FE34B9C7CD</key>
 		<dict>
 			<key>from</key>
 			<string>0A85E250-1274-4189-839E-6F61F9B41A0E - 0A85E250-1274-4189-839E-6F61F9B41A0E</string>
 			<key>to</key>
 			<string>C6D320D7-EB07-4330-A648-7B10128A7268 - C6D320D7-EB07-4330-A648-7B10128A7268</string>
 		</dict>
-		<key>B2940B16-CE30-4283-AF58-126CFE605AB7</key>
+		<key>6C8BB7EC-39E2-4E9F-B7F5-D4246691222A</key>
+		<dict>
+			<key>from</key>
+			<string>D6A06DFC-E233-407A-BA28-43260149978E - D6A06DFC-E233-407A-BA28-43260149978E</string>
+			<key>to</key>
+			<string>B8D6F0B6-D7B8-4B3F-8368-4794ECC489D7 - B8D6F0B6-D7B8-4B3F-8368-4794ECC489D7</string>
+		</dict>
+		<key>7115FDDE-1201-4722-96C1-8A36ED927A9D</key>
+		<dict>
+			<key>from</key>
+			<string>C6D320D7-EB07-4330-A648-7B10128A7268 - C6D320D7-EB07-4330-A648-7B10128A7268</string>
+			<key>to</key>
+			<string>43D93978-E93B-4BF1-AD82-8FCB5D0F75EF - 43D93978-E93B-4BF1-AD82-8FCB5D0F75EF</string>
+		</dict>
+		<key>712F559B-652B-461B-A382-6DB78A841AA8</key>
 		<dict>
 			<key>from</key>
 			<string>DBC7FDED-0D0D-432B-A590-41B2FB8D3F51 - DBC7FDED-0D0D-432B-A590-41B2FB8D3F51</string>
 			<key>to</key>
 			<string>C34D99A3-65D8-40C4-A8E1-A3E1EC0B9846 - C34D99A3-65D8-40C4-A8E1-A3E1EC0B9846</string>
 		</dict>
-		<key>BF2FC508-8EDA-4E1C-80B9-F1438F3303C4</key>
+		<key>78ED6E34-E6C2-4C4B-9FB1-3F1BDD978276</key>
 		<dict>
 			<key>from</key>
-			<string>08D493F1-EE0E-4DB1-A0CF-B0D83C651877 - 08D493F1-EE0E-4DB1-A0CF-B0D83C651877</string>
-			<key>to</key>
 			<string>1663B310-FC0B-4FE2-BA1B-11B792E2A177 - 1663B310-FC0B-4FE2-BA1B-11B792E2A177</string>
+			<key>to</key>
+			<string>70834F5F-A4FB-4E54-A820-CDA55EBD4205 - 70834F5F-A4FB-4E54-A820-CDA55EBD4205</string>
 		</dict>
-		<key>FA89FE28-E5F3-43BE-A1C2-51629BE5A538</key>
+		<key>90B11F56-D65E-4DD9-80D9-939F80DEC305</key>
+		<dict>
+			<key>from</key>
+			<string>43D93978-E93B-4BF1-AD82-8FCB5D0F75EF - 43D93978-E93B-4BF1-AD82-8FCB5D0F75EF</string>
+			<key>to</key>
+			<string>DBC7FDED-0D0D-432B-A590-41B2FB8D3F51 - DBC7FDED-0D0D-432B-A590-41B2FB8D3F51</string>
+		</dict>
+		<key>9428B896-C628-4581-B281-CD2598A89361</key>
 		<dict>
 			<key>from</key>
 			<string>7906C506-3FB7-4D42-9EC0-2B9A792FEA21 - 7906C506-3FB7-4D42-9EC0-2B9A792FEA21</string>
 			<key>to</key>
 			<string>5CD0C17A-ABAA-4121-85BD-AD78D943D752 - 5CD0C17A-ABAA-4121-85BD-AD78D943D752</string>
 		</dict>
-		<key>FEF4369E-19BA-475D-81A3-A09BA03DF981</key>
+		<key>A617A0FB-4A97-4470-AEF7-2CB35DE7785B</key>
 		<dict>
 			<key>from</key>
-			<string>D6A06DFC-E233-407A-BA28-43260149978E - D6A06DFC-E233-407A-BA28-43260149978E</string>
+			<string>A29FB908-F5A0-4740-BA38-776725CDFEBD - A29FB908-F5A0-4740-BA38-776725CDFEBD</string>
 			<key>to</key>
-			<string>B8D6F0B6-D7B8-4B3F-8368-4794ECC489D7 - B8D6F0B6-D7B8-4B3F-8368-4794ECC489D7</string>
+			<string>44A88A68-6C74-45FE-BC74-02DED5E69850 - 44A88A68-6C74-45FE-BC74-02DED5E69850</string>
+		</dict>
+		<key>C71B88DF-F66D-49EC-AA5A-B3693B221E45</key>
+		<dict>
+			<key>from</key>
+			<string>70834F5F-A4FB-4E54-A820-CDA55EBD4205 - 70834F5F-A4FB-4E54-A820-CDA55EBD4205</string>
+			<key>to</key>
+			<string>D6A06DFC-E233-407A-BA28-43260149978E - D6A06DFC-E233-407A-BA28-43260149978E</string>
+		</dict>
+		<key>DECB0BE6-E0DD-48C7-B224-1F309D6A11E8</key>
+		<dict>
+			<key>from</key>
+			<string>D6EA0DD0-DAF5-45EF-B23F-89CC513C5C4F - D6EA0DD0-DAF5-45EF-B23F-89CC513C5C4F</string>
+			<key>to</key>
+			<string>08D493F1-EE0E-4DB1-A0CF-B0D83C651877 - 08D493F1-EE0E-4DB1-A0CF-B0D83C651877</string>
+		</dict>
+		<key>E2F65F8C-6F7D-42A0-86B2-3F244885A6EA</key>
+		<dict>
+			<key>from</key>
+			<string>5CD0C17A-ABAA-4121-85BD-AD78D943D752 - 5CD0C17A-ABAA-4121-85BD-AD78D943D752</string>
+			<key>to</key>
+			<string>B9A2E4CC-B360-4845-A1BD-682DC271AD72 - B9A2E4CC-B360-4845-A1BD-682DC271AD72</string>
+		</dict>
+		<key>F2BE27D3-65AE-4291-9CED-5557CE6AC102</key>
+		<dict>
+			<key>from</key>
+			<string>C34D99A3-65D8-40C4-A8E1-A3E1EC0B9846 - C34D99A3-65D8-40C4-A8E1-A3E1EC0B9846</string>
+			<key>to</key>
+			<string>A29FB908-F5A0-4740-BA38-776725CDFEBD - A29FB908-F5A0-4740-BA38-776725CDFEBD</string>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -3045,7 +3040,7 @@ function run(input, parameters) {
 		<key>presentationMode</key>
 		<integer>15</integer>
 		<key>processesInput</key>
-		<integer>0</integer>
+		<false/>
 		<key>serviceApplicationBundleID</key>
 		<string>com.apple.finder</string>
 		<key>serviceApplicationPath</key>
@@ -3055,11 +3050,11 @@ function run(input, parameters) {
 		<key>serviceOutputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>serviceProcessesInput</key>
-		<integer>0</integer>
+		<false/>
 		<key>systemImageName</key>
 		<string>NSTouchBarDocuments</string>
 		<key>useAutomaticInputType</key>
-		<integer>0</integer>
+		<false/>
 		<key>workflowTypeIdentifier</key>
 		<string>com.apple.Automator.servicesMenu</string>
 	</dict>
