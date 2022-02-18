@@ -45,56 +45,6 @@
           "type": "path"
         },
         {
-          "type": "python",
-          "style": "powerline",
-          "powerline_symbol": "\uE0B0",
-          "foreground": "p:foreground",
-          "background": "p:background",
-          "properties": {
-            "prefix": " \uE235 "
-          }
-        },
-        {
-          "type": "ruby",
-          "style": "powerline",
-          "powerline_symbol": "\uE0B0",
-          "foreground": "p:foreground",
-          "background": "p:background",
-          "properties": {
-            "prefix": " \uE235 "
-          }
-        },
-        {
-          "type": "node",
-          "style": "powerline",
-          "powerline_symbol": "\uE0B0",
-          "foreground": "p:foreground",
-          "background": "p:background",
-          "properties": {
-            "prefix": " \uE235 "
-          }
-        },
-        {
-          "type": "go",
-          "style": "powerline",
-          "powerline_symbol": "\uE0B0",
-          "foreground": "p:foreground",
-          "background": "p:background",
-          "properties": {
-            "prefix": " \uE235 "
-          }
-        },
-        {
-          "type": "aws",
-          "style": "powerline",
-          "powerline_symbol": "\uE0B0",
-          "foreground": "p:foreground",
-          "background": "p:background",
-          "properties": {
-            "prefix": " \uE235 "
-          }
-        },
-        {
           "type": "executiontime",
           "style": "powerline",
           "powerline_symbol": "\uE0B0",
