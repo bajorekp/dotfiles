@@ -4,3 +4,6 @@
 # editors
 .idea
 .vscode
+
+# Ignore every file with `.ignore` extension
+*.ignore
