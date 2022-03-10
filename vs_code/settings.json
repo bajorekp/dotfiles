@@ -9,5 +9,6 @@
     "tabnine.experimentalAutoImports": true,
     "gitlens.statusBar.enabled": false,
     "workbench.colorTheme": "Default Dark+",
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "editor.inlineSuggest.enabled": true
 }
