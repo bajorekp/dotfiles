@@ -70,8 +70,12 @@ fpath+="$HOME/Developer/dotfiles/zsh/completion"
 
 # Issue `rm -f ~/.zcompdump; compinit` to rebuild cache
 autoload -Uz compinit
-compinit
-
+# https://carlosbecker.com/posts/speeding-up-zsh/
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
 
 # Use menu completion
 zstyle ':completion:*' menu select
