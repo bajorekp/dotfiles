@@ -56,3 +56,8 @@ git_autopurge() { git branch -D $(git branch --format='%(refname:short)') }
 alias pbpwd="echo -n $PWD | pbcopy && echo $PWD"
 # reloads shell configuration
 alias reload="source ~/.zshrc"
+
+# change directory to most frequent match
+# z dev == cd ~/Developer
+# https://github.com/rupa/z
+source /opt/homebrew/etc/profile.d/z.sh
