@@ -3,3 +3,6 @@ config.env
 
 # Git user configuration
 git/user.gitconfig
+
+# Client specific configuration
+zsh/corpo.profile
