@@ -23,7 +23,7 @@
           "foreground": "#ffffff",
           "leading_diamond": "\ue0b6",
           "properties": {
-            "template": " {{ if eq .Code 0 }}\u2713{{ else }}{{.Code}}{{ end }} "
+            "template": " {{ if eq .Code 0 }}\u2713{{ else }}{{ .Meaning }} ({{.Code}}){{ end }} "
           },
           "style": "diamond",
           "trailing_diamond": "\ue0b4 ",
