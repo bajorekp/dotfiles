@@ -15,7 +15,17 @@ if ! command -v rvm &> /dev/null; then
   # Install required packages
   rvm requirements
 
+  # sugested packages by https://github.com/rbenv/ruby-build/wiki#macos
+  brew install openssl@1.1 readline
+  
+  OPENSSL_1_1=$(brew --prefix openssl@1.1)
+  export PATH="$OPENSSL_1_1/bin:$PATH"
+  export LDFLAGS="-L$OPENSSL_1_1/lib"
+  export CPPFLAGS="-I$OPENSSL_1_1/include"
+  export PKG_CONFIG_PATH="$OPENSSL_1_1/lib/pkgconfig"
+  export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$OPENSSL_1_1"
+
   # Install a stable version of Ruby
   # command = non interactive mode for rvm
-  command rvm install 3.1.0
+  command rvm install ruby --latest
 fi
