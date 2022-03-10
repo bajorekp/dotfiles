@@ -4,20 +4,8 @@ rvm_silence_path_mismatch_check_flag=1
 
 fpath+="$HOME/.rvm/scripts/zsh/Completion"
 
-# Lazy load rvm
-# source: https://frederic-hemberger.de/notes/shell/speed-up-initial-zsh-startup-with-lazy-loading/
-# Check if 'rvm' is a command in $PATH
-if [ $commands[rvm] ]; then
-  # Placeholder function function. It will only be executed on the first call.
-  rvm() {
-    # Remove this function, subsequent calls will execute 'rvm' directly
-    unfunction "$0"
-    # Loads RVM as a function. It adds 0.1s to shell startup
-    source "$HOME/.rvm/scripts/rvm"
-    # Execute 'rvm' function
-    $0 "$@"
-  }
-fi
+# Loads RVM as a function. It adds 0.1s to shell startup
+source "$HOME/.rvm/scripts/rvm"
 
 # Force required openssl library version
 # This is required for gem compilation, i.e. puma, nokogiri
