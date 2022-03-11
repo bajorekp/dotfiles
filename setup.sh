@@ -9,22 +9,24 @@ source ./config.env
 # Creates required directories
 mkdir -vp $DEVELOPER_PATH
 
-# Install Brew package manager
+# Installs Brew package manager
+# May need user password for xcode-select instalation
+# and iCloud password to App Store
+# This are long running task
 bash ./setup/homebrew.sh
 eval $(/opt/homebrew/bin/brew shellenv)
-
-# Installs apps (needs user action)
 bash ./setup/packages.sh
 
-# Sets system
+# As we have git installed, we can clone the repo to its final 
+# destination to use dotfiles linking
+bash ./setup/repo_setup.sh
+
+# Sets system up
 bash ./setup/mac_general.sh
 bash ./setup/mac_dock.sh
 
-# Sets Github (needs user action)
+# Setup Git
 bash ./setup/git.sh
-
-# Clones the repo into Developer directory
-bash ./setup/repo_setup.sh
 
 # Setup terminal
 bash ./setup/fonts.sh
@@ -39,3 +41,6 @@ bash ./setup/vim.sh
 
 # Installs single manager for multiple languages
 bash ./setup/asdf.sh
+
+# Login to Github (always needs user action)
+bash ./setup/github.sh
