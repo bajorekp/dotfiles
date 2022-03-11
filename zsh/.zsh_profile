@@ -3,8 +3,6 @@
 #############################
 
 # Setups prompt engine
-# source ~/Developer/dotfiles/zsh/powerline/init.sh
-# source ~/Developer/dotfiles/zsh/starship/init.sh
 eval "$(oh-my-posh --init --shell zsh --config $HOME/Developer/dotfiles/zsh/oh_my_posh/oh_my_posh.omp.json)"
 
 # Command syntax highlighting

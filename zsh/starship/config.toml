@@ -1,5 +1,0 @@
-# A standard left prompt
-format = """$all"""
-
-# Not insert a blank line between shell prompts
-add_newline = false
