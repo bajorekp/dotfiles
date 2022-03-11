@@ -37,5 +37,5 @@ bash ./setup/vs_code.sh
 # Setup VIM
 bash ./setup/vim.sh
 
-# Installs ruby
-bash ./setup/ruby.sh
+# Installs single manager for multiple languages
+bash ./setup/asdf.sh
