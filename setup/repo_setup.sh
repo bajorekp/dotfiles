@@ -1,4 +1,5 @@
 #!/bin/bash
 
-cd ~/Developer
-git clone git@github.com:bajorekp/dotfiles.git
+if [[ -d ~/Developer/dotfiles ]]; then
+  git clone git@github.com:bajorekp/dotfiles.git ~/Developer/dotfiles
+fi
