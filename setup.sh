@@ -19,7 +19,7 @@ bash ./setup/packages.sh
 
 # As we have git installed, we can clone the repo to its final 
 # destination to use dotfiles linking
-bash ./setup/repo_setup.sh
+. ./setup/dotfiles_repo.sh
 
 # Sets system up
 bash ./setup/mac_general.sh
