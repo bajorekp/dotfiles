@@ -1,0 +1,82 @@
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+# Use delta --show-themes to list themes, before comment delta config
+[delta]
+	dark = true
+	# side-by-side = true
+	# syntax-theme = Monokai Extended Bright
+	features = bajorek
+	true-colors = always
+	navigate = true
+
+[delta "bajorek"]
+		# Styles have [text-styles background styles] order.
+		#  - each style order: [color decoration1 decoration2 ...]
+		# there are 4 special color names:
+		#  - 'auto' means the color is automatically chosen to be visible on the terminal background
+		#  - 'normal' means the color is the default foreground or background color of the terminal
+		#  - 'raw' means the color is the default foreground or background color of the terminal, but without any styling (e.g. no bold)
+		#  - 'syntax' means the color is chosen based on the syntax theme
+		#  - 'dim' prefix means the color is dimmed (e.g. 'dim red' is a dimmed red color)
+		# Decorations are: 'blink', 'bold', 'dim', 'hidden', 'italic', 'reverse', 'strike', and 'ul' (or 'underline').
+		#
+		# More info: https://dandavison.github.io/delta/full---help-output.html
+    dark = true
+    right-arrow = >
+    syntax-theme = Coldark-Dark
+
+    # -- git
+    blame-format = " ({commit:>7}) {author:<18} {timestamp:^13} - "
+		blame-code-style = syntax
+    blame-palette = "#3f3a2e #544c3d #6b6251 #817764 #988d78 #a39882"
+		blame-separator-format = "{n:^4_block}│"
+    commit-style = raw
+    commit-decoration-style = bold box
+		wrap-max-lines = unlimited
+
+    # -- grep
+    grep-file-style = olive
+    grep-line-number-style = olive
+
+    # -- diff
+    line-numbers = true
+    line-numbers-minus-style = red
+    line-numbers-plus-style = green
+    line-numbers-left-style = gray
+    line-numbers-left-format = "{nm:>1}┊"
+    line-numbers-right-style = gray
+    line-numbers-right-format = "{np:>1}┊"
+    line-numbers-zero-style = gray
+		whitespace-error-style = black ghostwhite # hihlight whitespace errors with white text on black background
+    zero-style = syntax
+
+		# -- diff changes
+    keep-plus-minus-markers = true
+    minus-style = dim ghostwhite darkred # removed line [syntax color text and darkred background]
+    minus-emph-style = ghostwhite crimson # removed part, e.g. characters [syntax color text and crimson background]
+		minus-non-emph-style = dim syntax # rest of the line [dimmed red text and no background]
+    minus-empty-line-marker-style = syntax maroon # removed empty line marker [syntax color text and maroon background]
+
+    plus-style = dim ghostwhite darkgreen # added line
+    plus-emph-style = ghostwhite olivedrab # added part, e.g. characters
+		plus-non-emph-style = dim syntax # rest of the line
+    plus-empty-line-marker-style = syntax seagreen # added empty line marker
+
+    # -- decorations
+    file-decoration-style = olive overline
+    file-added-label = [Added]
+    file-copied-label = [Copied]
+    file-modified-label = [Modified]
+    file-removed-label = [Removed]
+    file-renamed-label = [Renamed]
+    file-style = orange bold
+
+		# chunk of changes header
+    hunk-header-decoration-style = none
+    hunk-header-file-style = "#d5c4a1" bold
+    hunk-header-line-number-style = orange bold
+    hunk-header-style = file line-number bold syntax # include file path and line number, highlight hunk header with syntax theme colors and bold
