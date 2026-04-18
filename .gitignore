@@ -6,3 +6,6 @@ git/user.gitconfig
 
 # Client specific configuration
 zsh/corpo.profile
+
+# vscode profile will be very similar to settings.json
+vs_code/*.code-profile
