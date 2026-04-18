@@ -5,10 +5,64 @@
     "editor.accessibilitySupport": "off",
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
-    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.ignoreTrimWhitespace": true,
     "tabnine.experimentalAutoImports": true,
     "gitlens.statusBar.enabled": false,
-    "workbench.colorTheme": "Default Dark+",
-    "window.zoomLevel": 1,
-    "editor.inlineSuggest.enabled": true
+    "editor.inlineSuggest.enabled": true,
+    "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
+    "editor.gotoLocation.alternativeTypeDefinitionCommand": "editor.action.goToTypeDefinition",
+    "rubyLsp.formatter": "auto",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": true,
+        "scminput": false,
+        "yaml": true
+    },
+    "gitlens.rebaseEditor.ordering": "asc",
+    "terminal.integrated.env.osx": {
+        "FIG_NEW_SESSION": "1"
+    },
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "workbench.editorAssociations": {
+        "git-rebase-todo": "default"
+    },
+    "terraform.languageServer.enable": false,
+    "terraform.validation.enableEnhancedValidation": false,
+    "playwright.reuseBrowser": false,
+    "rubyLsp.rubyVersionManager": {
+        "identifier": "mise"
+    },
+    "diffEditor.useInlineViewWhenSpaceIsLimited": false,
+    "github.copilot.editor.enableAutoCompletions": true,
+    "diffEditor.renderSideBySide": true,
+    "workbench.list.defaultFindMode": "filter",
+    "window.customTitleBarVisibility": "never",
+    "zenMode.showTabs": "none",
+    "workbench.colorTheme": "Visual Studio Dark",
+    "editor.fontSize": 16,
+    "terminal.integrated.fontSize": 15,
+    "window.zoomLevel": -1,
+    "amazonQ.telemetry": false,
+    "github.copilot.selectedCompletionModel": "",
+    "github.copilot.chat.codesearch.enabled": true,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "editor.stickyScroll.enabled": false,
+    "breadcrumbs.enabled": false,
+    "editor.wordWrap": "on",
+    "editor.hover.hidingDelay": 1,
+    // "editor.hover.sticky": false,
+    "gitlens.hovers.annotations.over": "annotation",
+    "workbench.editor.enablePreview": false,
+    "githubPullRequests.pullBranch": "never",
+    "githubPullRequests.terminalLinksHandler": "github",
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "chat.viewSessions.orientation": "stacked",
+    "claudeCode.preferredLocation": "panel",
+    "diffEditor.hideUnchangedRegions.enabled": true
 }
