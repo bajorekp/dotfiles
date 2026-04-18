@@ -4,8 +4,6 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
-[include]
-	path = ~/Developer/dotfiles/git/user.gitconfig
 [core]
 	pager = less -+FX
 	excludesFile = ~/Developer/dotfiles/git/.gitignore
@@ -14,3 +12,20 @@
 [pull]
 	rebase = true
 	ff = only
+[safe]
+	directory = /usr/src/app
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[include]
+	path = ~/Developer/dotfiles/git/user.gitconfig
+[include]
+	path = ~/Developer/dotfiles/git/delta.gitconfig
