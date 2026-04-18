@@ -4,6 +4,14 @@
 # editors
 .idea
 .vscode
+.obsidian
 
 # Ignore every file with `.ignore` extension
 *.ignore
+
+# AI
+.aider*
+CLAUDE.md
+
+# Claude Code
+.claude/settings.local.json
