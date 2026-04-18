@@ -39,8 +39,8 @@ bash ./setup/vs_code.sh
 # Setup VIM
 bash ./setup/vim.sh
 
-# Installs single manager for multiple languages
-bash ./setup/asdf.sh
+# Installs single manager for multiple languages and tools
+bash ./setup/mise.sh
 
 # Login to Github (always needs user action)
 bash ./setup/github.sh
