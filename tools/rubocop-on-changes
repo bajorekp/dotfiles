@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Runs rubocop only on changed ruby files.
+# 
+# Examples:
+#
+# - just check: 
+#     $ rubocop-on-changes
+#
+# - check and fix: 
+#     $ rubocop-on-changes -A
+#
+
+RUBOCOP_PARAMS=$@
+
+# Returns default branch, i.e. origin/main, origin/master, origin/develop
+COMPARISON_BRANCH=$(git rev-parse --abbrev-ref origin/HEAD)
+CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+# Finds common ancestors commit without merge conflicts
+COMPARISON_COMMIT_HASH=$(git merge-base "$COMPARISON_BRANCH" "$CURRENT_BRANCH")
+
+# Returns only modified or new tracked filenames 
+TRACKED_FILES=$(git diff --name-only --diff-filter=d $COMPARISON_COMMIT_HASH)
+
+# Returns untracked filenames
+NOT_TRACKED_FILES=$(git ls-files --other --exclude-standard)
+
+# Filters all affected ruby files
+ALL_FILES=$(echo -e "$NOT_TRACKED_FILES\n$TRACKED_FILES")
+FILES_TO_CHECK=$(echo "$ALL_FILES" | uniq | grep -E "\\.rb|Rakefile" | grep -v "db/schema.rb")
+
+if [ -z "$FILES_TO_CHECK" ]; then
+  echo "No files to check, coast is clear"
+  exit 0
+else
+  echo "Running Rubocop [$RUBOCOP_PARAMS] on changed files:" $FILES_TO_CHECK 
+  rubocop $RUBOCOP_PARAMS --force-exclusion --fail-level C $FILES_TO_CHECK
+fi
